@@ -1,0 +1,310 @@
+﻿
+@{
+    ViewBag.Title = "Empleados";
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+}
+<div class="row page-titles">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">Administrador</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Administrador</a></li>
+            <li class="breadcrumb-item active">Empleados</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+        <button onclick="OuvrirDialog('#Employé-dialog');" class="btn waves-effect waves-light btn-info pull-right hidden-sm-down" style="color:white !important;"><i class="fa fa-plus-circle"></i> Nueva Promoción</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title text-center">Lista Empleados</h4>
+                <div class="table-responsive">
+                    <table class="display" id="Employé-table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Apellido Paterno</th>
+                                <th class="text-center">Apellido Materno</th>
+                                <th class="text-center">Teléfono</th>
+                                <th class="text-center">Correo</th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="Employé-dialog" title="Datos Empleado">
+    <form id="Prueba-form" class="form-horizontal form-material">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs customtab" role="tablist">
+            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home2" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down"><strong>Datos Personales</strong></span></a> </li>
+            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile2" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down"><strong>Dirección</strong></span></a> </li>
+            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages2" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down"><strong>Usuario</strong></span></a> </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active p-20" id="home2" role="tabpanel">
+                <br />
+                <div class="row">
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="NombreUsu">Nombre</label>
+                            <input type="text" class="form-control form-control-line" name="NombreUsu" id="NombreUsu" placeholder="Nombre" required>
+                            <label id="NombreUsu-error" class="error" for="NombreUsu"></label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="ApellidoMaternoUsu">Apellido Materno</label>
+                            <input type="text" class="form-control form-control-line" name="ApellidoMaternoUsu" id="ApellidoMaternoUsu" placeholder="Apellido" required>
+                            <label id="ApellidoMaternoUsu-error" class="error" for="ApellidoMaternoUsu"></label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="ApellidoPaternoUsu">Apellido Paterno</label>
+                            <input type="text" class="form-control form-control-line" name="ApellidoPaternoUsu" id="ApellidoPaternoUsu" placeholder="Apellido" required>
+                            <label id="ApellidoPaternoUsu-error" class="error" for="ApellidoPaternoUsu"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="CorreoUsu">Correo</label>
+                            <input type="email" class="form-control form-control-line" name="CorreoUsu" id="CorreoUsu" placeholder="ejemplo@gmail.com" required>
+                            <label id="CorreoUsu-error" class="error" for="CorreoUsu"></label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="TelefonoUsu">Teléfono</label>
+                            <input type="tel" class="form-control form-control-line" name="TelefonoUsu" id="TelefonoUsu" placeholder="(999)9999999" required>
+                            <label id="TelefonoUsu-error" class="error" for="TelefonoUsu"></label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="RFCUsu">RFC</label>
+                            <input type="text" class="form-control form-control-line" name="RFCUsu" id="RFCUsu" placeholder="RFC" required>
+                            <label id="RFCUsu-error" class="error" for="RFCUsu"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane  p-20" id="profile2" role="tabpanel">
+                <br />
+                <div class="row">
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="CalleDir">Calle</label>
+                            <input type="text" class="form-control form-control-line" name="CalleDir" id="CalleDir" placeholder="C." required>
+                            <label id="CalleDir-error" class="error" for="CalleDir"></label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="CruzaDir">Cruzamientos</label>
+                            <input type="text" class="form-control form-control-line" name="CruzaDir" id="CruzaDir" placeholder="Crz." required>
+                            <label id="CruzaDir-error" class="error" for="CruzaDir"></label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="ColoniaDir">Colonia</label>
+                            <input type="text" class="form-control form-control-line" name="ColoniaDir" id="ColoniaDir" placeholder="Col." required>
+                            <label id="ColoniaDir-error" class="error" for="ColoniaDir"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="NumInteDir">Número Interior</label>
+                            <input type="text" class="form-control form-control-line" name="NumInteDir" id="NumInteDir" placeholder="No. Int." required>
+                            <label id="NumInteDir-error" class="error" for="NumInteDir"></label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="NumExteDir">Número Exterior</label>
+                            <input type="text" class="form-control form-control-line" name="NumExteDir" id="NumExteDir" placeholder="No. Ext." required>
+                            <label id="NumExteDir-error" class="error" for="NumExteDir"></label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="CPDir">Código Postal</label>
+                            <input type="text" class="form-control form-control-line" name="CPDir" id="CPDir" placeholder="C.P." required>
+                            <label id="CPDir-error" class="error" for="CPDir"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane p-20" id="messages2" role="tabpanel">
+                <br />
+                <div class="row">
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="Usuario">Usuario</label>
+                            <input type="text" class="form-control form-control-line" name="Usuario" id="Usuario" placeholder="Usuario" required>
+                            <label id="Usuario-error" class="error" for="Usuario"></label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="ContraseñaUsu">Contraseña</label>
+                            <input type="password" class="form-control form-control-line" name="ContraseñaUsu" id="ContraseñaUsu" placeholder="•••••••••••" required>
+                            <label id="ContraseñaUsu-error" class="error" for="ContraseñaUsu"></label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="form-group">
+                            <label for="ConfirmContraseña">Confirmar Contraseña</label>
+                            <input type="password" class="form-control form-control-line" name="ConfirmContraseña" id="ConfirmContraseña" placeholder="•••••••••••"  required>
+                            <label id="ConfirmContraseña-error" class="error" for="ConfirmContraseña"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="asa" />
+    </form>
+</div>
+
+
+
+
+
+
+
+<!--Programmation-->
+<script type="text/javascript" language="JavaScript" charset="utf8">
+    //Dans le moment de charger le site web
+
+
+    $('#Prueba-form').on('submit', function (e) {
+        //e.preventDefault(); //Eviter recharger la web.
+
+
+    })
+    $('#Prueba-form').validate();
+
+    jQuery(function ($) {
+        var oTableEmployé = $('#Employé-table').DataTable({
+            "ajax": {
+                "url": "/Usager/ListeUsager",
+                "type": "GET",
+                "datatype": "json"
+            },
+            "columns": [
+                { "data": "NombreUsu", "autoWidth": true },
+                { "data": "ApellidoPaternoUsu", "autoWidth": true },
+                { "data": "ApellidoMaternoUsu", "autoWidth": true },
+                { "data": "TelefonoUsu", "autoWidth": true },
+                { "data": "CorreoUsu", "autoWidth": true },
+                {
+                    "data": "IdUsuario", "autoWidth": "true", "render": function (data) {
+                        return '<a class="btn btn-info pull-right" onclick="TrouverEmployé(' + data + ');" data-toggle="tooltip" title="Editar"><i class="fa fa-edit" style="color:white !important;"></i></a>'
+                    }
+                },
+                {
+                    "data": "IdUsuario", "autoWidth": "true", "render": function (data) {
+                        return '<a class="btn btn-cancelar pull-right" onclick="ÉliminerEmployé(' + data + ');" data-toggle="tooltip" title="Eliminar"><i class="fa fa-trash" style="color:white !important;"></i></a>'
+                    }
+                }
+            ]
+        });
+        //-----------Configuration du dialog employé---------------
+        var Dialog = $('#Employé-dialog').dialog({
+            autoOpen: false,
+            modal: false,
+            resizable: false,
+            height: 600,
+            width: 880,
+            hide: "fade",
+            modal: true,
+            open: function (event, ui) {
+                //center the dialog within the viewport (i.e. visible area of the screen)
+                var top = Math.max(jQuery(window).height() / 2 - jQuery(this)[0].offsetHeight / 2, 0);
+                var left = Math.max(jQuery(window).width() / 2 - jQuery(this)[0].offsetWidth / 2, 0);
+                jQuery(this).parent().css('top', top + "px");
+                jQuery(this).parent().css('left', left + "px");
+                jQuery(this).parent().css('position', 'fixed');
+            },
+            close: function () {
+                //LaverFormPromotion();
+            }
+        });
+        //------------------Charger table employé----------------
+
+    })(jQuery);
+    //----------------------Methods dialog---------------------
+    //'#Employé-dialog'
+    //----------------------Methods employé---------------------
+    function POST_Adresse() {
+        if ($('#ContraseñaUsu').val() == $('#ConfirmContraseña').val()) {
+            //Trouver donnés d'adresse
+            var oDireccionModel = '{IdDireccion:"' + $('#IdDireccion').val() + '",CalleDir:"' + $('#CalleDir').val() + '",NumInteDir:"' + $('#NumInteDir').val() +
+                '",NumExteDir:"' + $('#NumExteDir').val() + '",CruzaDir:"' + $('#CruzaDir').val() + '",ColoniaDir:"' + $('#ColoniaDir').val() +
+                '",CPDir:"' + $('#CPDir').val() + '",UbicacionDir:"N/A",LatitudDir:"N/A",LongitudDir:"N/A"}';
+            //Faire le POST
+            $.ajax({
+                type: "POST",
+                url: "/Adresse/EnvogerAdresse",
+                data: oDireccionModel,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    POST_Employé();
+                },
+                error: function (response) {
+
+                    if ($('#IdDireccion').val() != null || $('#IdDireccion').val() > 0) {
+                        swal("Error", "Al Actualizar la Dirección del Empleado!", "error");
+                    } else {
+                        swal("Error", "Al Agregar la Dirección del Empleado!", "error");
+                    }
+                }
+            });
+        }
+    }
+    function POST_Employé() {
+        var oUsuarioModel = '{IdUsuario:"' + $('#IdUsuario').val() + '",NombreUsu:"' + $('#NombreUsu').val() + '",CPDir:"' + $('#ApellidoMaternoUsu').val() +
+            '",ApellidoPaternoUsu:"' + $('#ApellidoPaternoUsu').val() + '",CorreoUsu:"' + $('#CorreoUsu').val() + '",TelefonoUsu:"' + $('#TelefonoUsu').val() +
+            '",RFCUsu:"' + $('#RFCUsu').val() + '",Usuario:"' + $('#Usuario').val() + '",ContraseñaUsu:"' + $('#ContraseñaUsu').val() + '",IdTipoUsuario1:"' + 2 +
+            '",IdDireccion2:"' + $('#IdDireccion').val() + '"}';
+
+        $.ajax({
+            type: "POST",
+            url: "/Usager/EnvogerUsager",
+            data: oUsuarioModel,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                FermerDialog('#Employé-dialog');
+                if ($('#IdUsuario').val() != null || $('#IdUsuario').val() > 0) {
+                    swal("Datos del Empleado", "Actualizado con Éxito!", "success");
+                } else {
+                    swal("Empleado", "Agregado con Éxito!", "success");
+                }
+                ActualizerTable('#Employé-table');
+            },
+            error: function (response) {
+                FermerDialog('#Employé-dialog');
+                if ($('#IdUsuario').val() != null || $('#IdUsuario').val() > 0) {
+                    swal("Error", "Al actualizar Datos del Empleado!", "error");
+                } else {
+                    swal("Error", "Al agregar Empleado!", "error");
+                }
+                ActualizerTable('#Employé-table');
+            }
+        });
+    }
+</script>
