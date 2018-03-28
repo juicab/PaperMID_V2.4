@@ -131,12 +131,14 @@
     <Content Include="Content\Css\spinners.css" />
     <Content Include="Content\Css\Admin-style.css" />
     <Content Include="Content\Css\steps.css" />
+    <Content Include="Content\Images\add-user.png" />
     <Content Include="Content\Images\cart.png" />
     <Content Include="Content\Images\colores.jpg" />
     <Content Include="Content\Images\Crayon.jpg" />
     <Content Include="Content\Images\entrega.png" />
     <Content Include="Content\Images\image.png" />
     <Content Include="Content\Images\Lapiz.jpg" />
+    <Content Include="Content\Images\letter2.png" />
     <Content Include="Content\Images\Libreta.jpg" />
     <Content Include="Content\Images\login.png" />
     <Content Include="Content\Images\Logos\Bic-Logo.png" />
@@ -782,6 +784,10 @@
     <Content Include="Views\Publico\Imagen.cshtml" />
     <Content Include="Views\Cliente\QuienesSomos.cshtml" />
     <Content Include="Views\Publico\Registrarse.cshtml" />
+    <Content Include="Views\Cliente\MiCuenta.cshtml" />
+    <Content Include="Views\Cliente\MisCompras.cshtml" />
+    <Content Include="Views\Publico\Contacto.cshtml" />
+    <Content Include="Views\Cliente\Contacto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -41,5 +41,19 @@ namespace PaperMID.Controllers
             Session.Abandon();
             return RedirectToAction("Inicio", "Publico");
         }
+        public ActionResult Contacto()
+        {
+            return View();
+        }
+
+        public ActionResult MiCuenta()
+        {
+            return View();
+        }
+
+        public ActionResult MisCompras()
+        {
+            return View();
+        }
     }
 }

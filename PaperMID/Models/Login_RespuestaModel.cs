@@ -11,5 +11,6 @@ namespace PaperMID.Models
 
         public string Modulo { get; set; }
         public string NombreUsu { get; set; }
+        public string Usuario { get; set; }
     }
 }

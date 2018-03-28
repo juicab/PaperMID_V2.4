@@ -94,7 +94,7 @@ else
                             <i class="fa fa-question-circle"></i> Más
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#"><i class="fa fa-at"></i> Contacto</a>
+                            <a class="dropdown-item" href="@Url.Action("Contacto","Cliente")"><i class="fa fa-at"></i> Contacto</a>
                             <a class="dropdown-item" href="@Url.Action("QuienesSomos","Cliente")"><i class="fa fa-users"></i> Quiénes Somos</a>
                         </div>
                     </li>
@@ -104,8 +104,8 @@ else
                             <i class="fa fa-user-circle"></i>@Session["NombreUsu"]
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#"><i class="fa fa-suitcase"></i> Mis Compras</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Cuenta</a>
+                            <a class="dropdown-item" href="@Url.Action("MisCompras","Cliente")"><i class="fa fa-suitcase"></i> Mis Compras</a>
+                            <a class="dropdown-item" href="@Url.Action("MiCuenta","Cliente")"><i class="fa fa-user"></i> Cuenta</a>
                             <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-sign-out" style="font-size:20px;"></i> Salir</a>
                         </div>
                     </li>

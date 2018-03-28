@@ -45,6 +45,11 @@ namespace PaperMID.Controllers
             return View();
         }
 
+        public ActionResult Contacto()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<ActionResult> Login(string Usuario, string ContraseñaUsu)
         {
@@ -59,6 +64,7 @@ namespace PaperMID.Controllers
                 Login_RespuestaModel _oLogin_RespuestaModel = JsonConvert.DeserializeObject<Login_RespuestaModel>(RespuestaLogin);
                 Session["IdUsuario"] = _oLogin_RespuestaModel.IdUsuario;
                 Session["NombreUsu"] = _oLogin_RespuestaModel.NombreUsu;
+                Session["Usuario"] = _oLogin_RespuestaModel.Usuario;
                 string NombreUser = _oLogin_RespuestaModel.NombreUsu;
                 return RedirectToAction("Inicio", _oLogin_RespuestaModel.Modulo);
             }
