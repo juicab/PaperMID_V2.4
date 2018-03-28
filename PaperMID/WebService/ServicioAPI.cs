@@ -11,13 +11,14 @@ namespace PaperMID.WebService
     {
         public HttpClient Cliente;
         private MediaTypeWithQualityHeaderValue contentType;
-        private string Url = "http://localhost:50949";
+        private string Url_Local = "http://localhost:50949";
+        private string Url_Web = "http://webservicepapermidapi20180226124721.azurewebsites.net/";
         public ServicioAPI()
         {
             contentType = new MediaTypeWithQualityHeaderValue("application/json");
             Cliente = new HttpClient()
             {
-                BaseAddress = new Uri(Url)
+                BaseAddress = new Uri(Url_Web)
             };
             Cliente.DefaultRequestHeaders.Accept.Add(contentType);
         }
